@@ -297,7 +297,7 @@ def calculateGreens():
                                                       getIdx(source))
 
                         command='{} {} {} {} {} {}\n'.format(\
-                                        os.path.join(os.getcwd(),config.cfg['Green']['ExePath']),
+                                        os.path.join(os.path.dirname(os.path.abspath(__file__)),config.cfg['Green']['ExePath']),
                                         os.path.join('station.dat'),
                                         os.path.join('crustals', crustal),
                                         os.path.join('grdat', grdat),
@@ -427,7 +427,7 @@ def calculateInversions():
 
                 os.makedirs(os.path.join(config.inversiondir,invdir))
 
-                command='{} {} {} {} {} {} {} {} {} {} \n'.format(os.path.join(os.getcwd(),config.cfg['Inversion']['ExePath']),
+                command='{} {} {} {} {} {} {} {} {} {} \n'.format(os.path.join(os.path.dirname(os.path.abspath(__file__)),config.cfg['Inversion']['ExePath']),
                             os.path.join('..', '..','allstat', allstat),
                             os.path.join('..', '..','inpinv', inpinv),
                             os.path.join('..', '..','grdat', 'grdat'+igrdat+'.hed'),
@@ -2673,7 +2673,7 @@ def calculateRevisedInversions(_cfg,logger,workdir,bestinvdir, evt_obj=None, res
     for grhes_file in sorted(glob.glob(os.path.join(workdir,'greens',grhes_pattern))):
         isource= grhes_file.split('.')[-2]
 
-        command='{} {} {} {} {} {} {} {} {} {} \n'.format(os.path.join(os.getcwd(),_cfg['Inversion']['ExePath']),
+        command='{} {} {} {} {} {} {} {} {} {} \n'.format(os.path.join(os.path.dirname(os.path.abspath(__file__)),_cfg['Inversion']['ExePath']),
                 os.path.join('..', '..','allstat', allstat),
                 os.path.join('..', '..','inpinv', inpinv),
                 os.path.join('..', '..','grdat', 'grdat'+igrdat+'.hed'),
