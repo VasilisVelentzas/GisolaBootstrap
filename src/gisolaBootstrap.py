@@ -275,6 +275,11 @@ if not args.revise:
                 _t = time.time()
                 isola2.getBootstrapping()
                 _stage('bootstrapping', _t, _STAGE_T)
+                # split figures time out of bootstrapping stage
+                if isola2._SUMMARY is not None:
+                    _fig_t = isola2._SUMMARY['plotsTime']
+                    _STAGE_T['bootstrapping'] -= _fig_t
+                    _STAGE_T['bootstrap figures'] = _fig_t
             # ---- Single final HTML render (inversion + bootstrap combined) ----
             _t = time.time()
             isola2.renderSite()
