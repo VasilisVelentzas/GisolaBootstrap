@@ -1,4 +1,4 @@
-name: gisola
+name: gisola2
 # GPU support (optional): see install.sh for the additional apt packages required.
 # Set ComputeDevice: GPU in config.yaml to enable GPU acceleration.
 channels:
