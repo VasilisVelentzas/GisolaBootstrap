@@ -15,7 +15,7 @@ cd "$REPO_DIR/src/core/green"
 make
 
 echo "Setting executable permissions..."
-chmod +x "$REPO_DIR/src/gisola2Bootstrap.py"
+chmod +x "$REPO_DIR/src/gisolaBootstrap.py"
 
 echo "Pre-compiling Numba kernels (one-time, ~10s)..."
 cd "$REPO_DIR/src"
